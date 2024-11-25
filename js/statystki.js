@@ -1,5 +1,6 @@
 ﻿document.addEventListener('DOMContentLoaded', () => {
-    const matches = JSON.parse(json).matches;
+    const data = JSON.parse(json);
+    const matches = data.matches;
     const playerStats = {};
 
     // Przetwarzanie danych meczów
@@ -9,112 +10,94 @@
                 playerStats[player.name] = {
                     wins: 0,
                     totalDamage: 0,
-                    matchesPlayed: 0
+                    matchesPlayed: 0,
+                    kills: 0,
+                    assists: 0,
+                    deaths: 0,
                 };
             }
 
             playerStats[player.name].matchesPlayed++;
             playerStats[player.name].totalDamage += player.damage;
+            playerStats[player.name].kills += player.kills;
+            playerStats[player.name].assists += player.assists;
+            playerStats[player.name].deaths += player.deaths;
+
             if (player.win) {
                 playerStats[player.name].wins++;
             }
         });
     });
 
-    // Generowanie klasyfikacji
-    generateClassifications(playerStats);
-
-    // Wczytywanie zrzutów ekranu
-    loadScreenshots(matches);
+    // Generowanie kart graczy
+    generatePlayerCards(playerStats);
 });
 
-function generateClassifications(playerStats) {
-    // Pierwszy Wygrany
-    const pierwszyWygrany = Object.entries(playerStats)
-        .sort((a, b) => b[1].wins - a[1].wins);
-    populateTable('pierwszy-wygrany-table', ['Gracz', 'Liczba Wygranych'], pierwszyWygrany, stat => [stat[0], stat[1].wins]);
+function generatePlayerCards(playerStats) {
+    const container = document.getElementById('karty-graczy');
+    container.innerHTML = '';
 
-    // Najlepszy Grajek
-    const najlepszyGrajek = Object.entries(playerStats)
-        .filter(stat => stat[1].matchesPlayed >= 3)
-        .sort((a, b) => (b[1].totalDamage / b[1].matchesPlayed) - (a[1].totalDamage / a[1].matchesPlayed));
-    populateTable('najlepszy-grajek-table', ['Gracz', 'Średnie Obrażenia'], najlepszyGrajek, stat => [stat[0], (stat[1].totalDamage / stat[1].matchesPlayed).toFixed(2)]);
-
-    // Honorowy Wojownik
-    const honorowyWojownik = Object.entries(playerStats)
-        .sort((a, b) => b[1].matchesPlayed - a[1].matchesPlayed);
-    populateTable('honorowy-wojownik-table', ['Gracz', 'Liczba Meczów'], honorowyWojownik, stat => [stat[0], stat[1].matchesPlayed]);
-}
-
-function populateTable(tableId, headers, data, rowDataCallback) {
-    const table = document.getElementById(tableId);
-    table.innerHTML = '';
-
-    const thead = document.createElement('thead');
-    const headerRow = document.createElement('tr');
-    headers.forEach(text => {
-        const th = document.createElement('th');
-        th.textContent = text;
-        headerRow.appendChild(th);
-    });
-    thead.appendChild(headerRow);
-
-    const tbody = document.createElement('tbody');
-    data.forEach(stat => {
-        const row = document.createElement('tr');
-        rowDataCallback(stat).forEach(text => {
-            const td = document.createElement('td');
-            td.textContent = text;
-            row.appendChild(td);
-        });
-        tbody.appendChild(row);
-    });
-
-    table.appendChild(thead);
-    table.appendChild(tbody);
-}
-
-function loadScreenshots(matches) {
-    const gallery = document.getElementById('galeria-zrzutow');
-    gallery.innerHTML = '';
-
-    matches.forEach(match => {
+    Object.entries(playerStats).forEach(([name, stats]) => {
         const col = document.createElement('div');
-        col.classList.add('col-md-4', 'mb-4');
+        col.classList.add('col-md-6', 'mb-4');
 
-        const link = document.createElement('a');
-        link.href = `screenshots/${match.screenshot}`;
-        link.setAttribute('data-lightbox', 'screenshots');
-        link.setAttribute('data-title', `Mecz ${match.match_id} - ${match.date}`);
+        const card = document.createElement('div');
+        card.classList.add('card', 'h-100');
 
-        const img = document.createElement('img');
-        img.src = `screenshots/${match.screenshot}`;
-        img.alt = `Mecz ${match.match_id}`;
-        img.classList.add('img-fluid', 'rounded');
+        const cardBody = document.createElement('div');
+        cardBody.classList.add('card-body');
 
-        link.appendChild(img);
-        col.appendChild(link);
-        gallery.appendChild(col);
+        const cardTitle = document.createElement('h5');
+        cardTitle.classList.add('card-title');
+        cardTitle.textContent = name;
+
+        const cardText = document.createElement('p');
+        cardText.innerHTML = `
+      Liczba Wygranych: ${stats.wins}<br>
+      Liczba Meczów: ${stats.matchesPlayed}<br>
+      Średnie Obrażenia: ${(stats.totalDamage / stats.matchesPlayed).toFixed(2)}<br>
+      Zabójstwa: ${stats.kills}<br>
+      Asysty: ${stats.assists}<br>
+      Śmierci: ${stats.deaths}<br>
+      K/D Ratio: ${(stats.kills / stats.deaths).toFixed(2)}
+    `;
+
+        // Wykresy
+        const canvas = document.createElement('canvas');
+        canvas.id = `chart-${name}`;
+        canvas.height = 200;
+
+        cardBody.appendChild(cardTitle);
+        cardBody.appendChild(cardText);
+        cardBody.appendChild(canvas);
+        card.appendChild(cardBody);
+        col.appendChild(card);
+        container.appendChild(col);
+
+        // Generowanie wykresu
+        generateChart(name, stats);
     });
 }
 
-function generateCharts(playerStats) {
-    // Dane do wykresów
-    const labels = Object.keys(playerStats);
-    const winsData = labels.map(name => playerStats[name].wins);
-    const damageData = labels.map(name => (playerStats[name].totalDamage / playerStats[name].matchesPlayed).toFixed(2));
-
-    // Wykres liczby wygranych
-    const ctxWins = document.getElementById('wykres-wygranych').getContext('2d');
-    const winsChart = new Chart(ctxWins, {
+function generateChart(name, stats) {
+    const ctx = document.getElementById(`chart-${name}`).getContext('2d');
+    const chart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: labels,
+            labels: ['Zabójstwa', 'Asysty', 'Śmierci'],
             datasets: [{
-                label: 'Liczba Wygranych',
-                data: winsData,
-                backgroundColor: 'rgba(54, 162, 235, 0.7)',
-                borderColor: 'rgba(54, 162, 235, 1)',
+                label: 'Statystyki',
+                data: [stats.kills, stats.assists, stats.deaths],
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(255, 99, 132, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
                 borderWidth: 1
             }]
         },
@@ -123,7 +106,7 @@ function generateCharts(playerStats) {
             plugins: {
                 title: {
                     display: true,
-                    text: 'Liczba Wygranych przez Graczy'
+                    text: `Statystyki Gracza ${name}`
                 }
             },
             scales: {
@@ -134,38 +117,7 @@ function generateCharts(playerStats) {
             }
         }
     });
-
-    // Wykres średnich obrażeń
-    const ctxDamage = document.getElementById('wykres-obrazen').getContext('2d');
-    const damageChart = new Chart(ctxDamage, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Średnie Obrażenia',
-                data: damageData,
-                backgroundColor: 'rgba(255, 99, 132, 0.7)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                title: {
-                    display: true,
-                    text: 'Średnie Obrażenia przez Graczy'
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
 }
-
 
 const json = `{
   "matches": [
