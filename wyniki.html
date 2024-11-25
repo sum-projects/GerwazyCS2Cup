@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Wyniki - Gerwazy CS2 Cup</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/lightbox.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+<!-- Nawigacja -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Gerwazy CS2 Cup</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html#regulamin">Regulamin</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#sponsorzy">Sponsorzy</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#kontakt">Kontakt</a></li>
+                <li class="nav-item"><a class="nav-link active" href="wyniki.html">Wyniki</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container my-5">
+    <h1 class="text-center">Wyniki Turnieju</h1>
+
+    <!-- Klasyfikacje -->
+    <section id="klasyfikacje" class="my-5">
+        <h2>Klasyfikacje</h2>
+        <ul class="nav nav-tabs" id="klasyfikacjeTab" role="tablist">
+            <li class="nav-item">
+                <button class="nav-link active" id="pierwszy-wygrany-tab" data-bs-toggle="tab" data-bs-target="#pierwszy-wygrany" type="button" role="tab" aria-controls="pierwszy-wygrany" aria-selected="true">Pierwszy Wygrany</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" id="najlepszy-grajek-tab" data-bs-toggle="tab" data-bs-target="#najlepszy-grajek" type="button" role="tab" aria-controls="najlepszy-grajek" aria-selected="false">Najlepszy Grajek</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" id="honorowy-wojownik-tab" data-bs-toggle="tab" data-bs-target="#honorowy-wojownik" type="button" role="tab" aria-controls="honorowy-wojownik" aria-selected="false">Honorowy Wojownik</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="klasyfikacjeTabContent">
+            <div class="tab-pane fade show active" id="pierwszy-wygrany" role="tabpanel">
+                <table class="table mt-3" id="pierwszy-wygrany-table">
+                    <!-- Dane zostaną wczytane przez JavaScript -->
+                </table>
+            </div>
+            <div class="tab-pane fade" id="najlepszy-grajek" role="tabpanel">
+                <table class="table mt-3" id="najlepszy-grajek-table">
+                    <!-- Dane zostaną wczytane przez JavaScript -->
+                </table>
+            </div>
+            <div class="tab-pane fade" id="honorowy-wojownik" role="tabpanel">
+                <table class="table mt-3" id="honorowy-wojownik-table">
+                    <!-- Dane zostaną wczytane przez JavaScript -->
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statystyki Graczy -->
+    <section id="statystyki-graczy" class="my-5">
+        <h2>Statystyki Graczy</h2>
+        <div class="row" id="karty-graczy">
+            <!-- Karty graczy zostaną wygenerowane przez JavaScript -->
+        </div>
+    </section>
+
+    <section id="wykresy" class="my-5">
+        <h2>Wykresy Statystyk</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <canvas id="wykres-wygranych"></canvas>
+            </div>
+            <div class="col-md-6 mb-4">
+                <canvas id="wykres-obrazen"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dokumentacja Meczów -->
+    <section id="dokumentacja-meczow" class="my-5">
+        <h2>Dokumentacja Meczów</h2>
+        <div class="row" id="galeria-zrzutow">
+            <!-- Zrzuty ekranu zostaną wczytane przez JavaScript -->
+        </div>
+    </section>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+<!-- Stopka -->
+<!-- Skopiuj stopkę z index.html -->
+<script src="js/lightbox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+<!-- Skrypt JavaScript do przetwarzania wyników -->
+<script src="js/wyniki.js"></script>
+
+</body>
+</html>
