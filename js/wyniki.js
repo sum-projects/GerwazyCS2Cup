@@ -277,7 +277,7 @@ const json = `{
       "players": [
         {"name": "HESOYAM", "kills": 26, "deaths": 16, "assists": 7, "psg": 38, "damage": 2824, "win": true},
         {"name": "ncl.", "kills": 19, "deaths": 20, "assists": 7, "psg": 73, "damage": 2270, "win": true},
-        {"name": "[-[__?-]", "kills": 18, "deaths": 16, "assists": 3, "psg": 72, "damage": 1739, "win": true},
+        {"name": "[-_-?]", "kills": 18, "deaths": 16, "assists": 3, "psg": 72, "damage": 1739, "win": true},
         {"name": "GarbatyProPlayer", "kills": 13, "deaths": 17, "assists": 7, "psg": 23, "damage": 1516, "win": true},
         {"name": "Pugiano ZDR", "kills": 12, "deaths": 16, "assists": 4, "psg": 58, "damage": 1146, "win": true},
         {"name": "Koniu", "kills": 26, "deaths": 16, "assists": 10, "psg": 38, "damage": 2755, "win": false},
@@ -297,7 +297,7 @@ const json = `{
         {"name": "Pugiano ZDR", "kills": 13, "deaths": 17, "assists": 9, "psg": 69, "damage": 1802, "win": true},
         {"name": "Golden Sum", "kills": 20, "deaths": 14, "assists": 3, "psg": 25, "damage": 1761, "win": true},
         {"name": "GarbatyProPlayer", "kills": 7, "deaths": 16, "assists": 4, "psg": 14, "damage": 1024, "win": true},
-        {"name": "[-[__?-]", "kills": 18, "deaths": 20, "assists": 5, "psg": 61, "damage": 2049, "win": false},
+        {"name": "[-_-?]", "kills": 18, "deaths": 20, "assists": 5, "psg": 61, "damage": 2049, "win": false},
         {"name": "pereK", "kills": 15, "deaths": 18, "assists": 5, "psg": 46, "damage": 1806, "win": false},
         {"name": "Dario", "kills": 20, "deaths": 16, "assists": 2, "psg": 50, "damage": 1701, "win": false},
         {"name": "KINIORSZCZYK", "kills": 13, "deaths": 21, "assists": 5, "psg": 23, "damage": 1634, "win": false},
@@ -310,7 +310,7 @@ const json = `{
       "date": "2024-11-22",
       "players": [
         {"name": "KINIORSZCZYK", "kills": 19, "deaths": 13, "assists": 4, "psg": 26, "damage": 1902, "win": true},
-        {"name": "[-[__?-]", "kills": 19, "deaths": 12, "assists": 3, "psg": 57, "damage": 1889, "win": true},
+        {"name": "[-_-?]", "kills": 19, "deaths": 12, "assists": 3, "psg": 57, "damage": 1889, "win": true},
         {"name": "Dario", "kills": 18, "deaths": 13, "assists": 3, "psg": 33, "damage": 1796, "win": true},
         {"name": "Pugiano ZDR", "kills": 14, "deaths": 11, "assists": 9, "psg": 28, "damage": 1721, "win": true},
         {"name": "ncl.", "kills": 10, "deaths": 14, "assists": 3, "psg": 70, "damage": 1188, "win": true},
@@ -328,7 +328,7 @@ const json = `{
       "players": [
         {"name": "Golden Sum", "kills": 27, "deaths": 12, "assists": 2, "psg": 29, "damage": 2416, "win": true},
         {"name": "HESOYAM", "kills": 25, "deaths": 13, "assists": 3, "psg": 44, "damage": 2151, "win": true},
-        {"name": "[-[__?-]", "kills": 16, "deaths": 15, "assists": 6, "psg": 62, "damage": 1882, "win": true},
+        {"name": "[-_-?]", "kills": 16, "deaths": 15, "assists": 6, "psg": 62, "damage": 1882, "win": true},
         {"name": "BlaQu", "kills": 6, "deaths": 15, "assists": 10, "psg": 100, "damage": 1203, "win": true},
         {"name": "Mixon2t", "kills": 8, "deaths": 17, "assists": 8, "psg": 50, "damage": 1150, "win": true},
         {"name": "KINIORSZCZYK", "kills": 17, "deaths": 17, "assists": 10, "psg": 23, "damage": 2220, "win": false},
