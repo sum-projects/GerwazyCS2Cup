@@ -416,11 +416,11 @@ const json = `{
         {"name": "KINIORSZCZYK", "kills": 18, "deaths": 27, "assists": 10, "psg": 33, "damage": 2356, "win": false},
         {"name": "Golden Sum", "kills": 18, "deaths": 21, "assists": 7, "psg": 55, "damage": 2180, "win": false},
         {"name": "Mixon2t", "kills": 20, "deaths": 23, "assists": 6, "psg": 45, "damage": 2071, "win": false},
-        {"name": "Dario", "kills": 29, "deaths": 21, "assists": 7, "psg": 37, "damage": 3168, "win": true},
-        {"name": "HESOYAM", "kills": 27, "deaths": 22, "assists": 9, "psg": 61, "damage": 2728, "win": true},
-        {"name": "ncl.", "kills": 27, "deaths": 22, "assists": 9, "psg": 51, "damage": 2703, "win": true},
-        {"name": "pereK", "kills": 22, "deaths": 9, "assists": 6, "psg": 46, "damage": 2554, "win": true},
-        {"name": "Kundi", "kills": 8, "deaths": 24, "assists": 5, "psg": 50, "damage": 920, "win": true}
+        {"name": "Dario", "kills": 29, "deaths": 21, "assists": 7, "psg": 37, "damage": 3168, "win": false},
+        {"name": "HESOYAM", "kills": 27, "deaths": 22, "assists": 9, "psg": 61, "damage": 2728, "win": false},
+        {"name": "ncl.", "kills": 27, "deaths": 22, "assists": 9, "psg": 51, "damage": 2703, "win": false},
+        {"name": "pereK", "kills": 22, "deaths": 9, "assists": 6, "psg": 46, "damage": 2554, "win": false},
+        {"name": "Kundi", "kills": 8, "deaths": 24, "assists": 5, "psg": 50, "damage": 920, "win": false}
       ],
       "screenshot": "mecz15.jpg"
     }
