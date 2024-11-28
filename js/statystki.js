@@ -392,6 +392,23 @@ const json = `{
         {"name": "KINIORSZCZYK", "kills": 10, "deaths": 15, "assists": 1, "psg": 20, "damage": 917, "win": false}
       ],
       "screenshot": "mecz16.png"
+    },
+    {
+      "match_id": 17,
+      "date": "2024-11-28",
+      "players": [
+        {"name": "HESOYAM", "kills": 24, "deaths": 9, "assists": 9, "psg": 25, "damage": 2649, "win": true},
+        {"name": "pereK", "kills": 19, "deaths": 11, "assists": 9, "psg": 21, "damage": 2069, "win": true},
+        {"name": "KINIORSZCZYK", "kills": 17, "deaths": 9, "assists": 7, "psg": 35, "damage": 1361, "win": true},
+        {"name": "GarbatyProPlayer", "kills": 11, "deaths": 12, "assists": 7, "psg": 45, "damage": 1351, "win": true},
+        {"name": "SebaPrzeCh", "kills": 11, "deaths": 12, "assists": 2, "psg": 54, "damage": 1032, "win": true},
+        {"name": "ncl.", "kills": 14, "deaths": 17, "assists": 5, "psg": 35, "damage": 1659, "win": false},
+        {"name": "Mixon2t", "kills": 15, "deaths": 15, "assists": 4, "psg": 26, "damage": 1518, "win": false},
+        {"name": "Golden Sum", "kills": 11, "deaths": 17, "assists": 6, "psg": 36, "damage": 1208, "win": false},
+        {"name": "Kundi", "kills": 6, "deaths": 18, "assists": 3, "psg": 0, "damage": 980, "win": false},
+        {"name": "Dario", "kills": 7, "deaths": 16, "assists": 3, "psg": 57, "damage": 951, "win": false}
+      ],
+      "screenshot": "mecz17.png"
     }
   ]
 }`;
