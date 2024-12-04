@@ -548,7 +548,7 @@ const json = `{
       "players": [
         {"name": "Mixon2t", "kills": 21, "deaths": 19, "assists": 7, "psg": 61, "damage": 2508, "win": false},
         {"name": "Koniu", "kills": 21, "deaths": 13, "assists": 5, "psg": 38, "damage": 1961, "win": false},
-        {"name": "[-[__?-]", "kills": 18, "deaths": 17, "assists": 4, "psg": 44, "damage": 1911, "win": false},
+        {"name": "[-_-?]", "kills": 18, "deaths": 17, "assists": 4, "psg": 44, "damage": 1911, "win": false},
         {"name": "Kundi", "kills": 10, "deaths": 19, "assists": 6, "psg": 20, "damage": 1286, "win": false},
         {"name": "Golden Sum", "kills": 12, "deaths": 19, "assists": 2, "psg": 25, "damage": 1270, "win": false},
         {"name": "ncl.", "kills": 29, "deaths": 14, "assists": 5, "psg": 72, "damage": 2858, "win": true},
