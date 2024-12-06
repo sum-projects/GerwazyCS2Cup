@@ -172,7 +172,7 @@ const json = `{
       "match_id": 1,
       "date": "2024-11-21",
       "players": [
-        {"name": "LOKU", "kills": 32, "deaths": 24, "assists": 10, "psg": 56, "damage": 3790, "win": false},
+        {"name": "LOKU #freekrzychostan", "kills": 32, "deaths": 24, "assists": 10, "psg": 56, "damage": 3790, "win": false},
         {"name": "Mixon2t", "kills": 22, "deaths": 24, "assists": 6, "psg": 59, "damage": 2498, "win": false},
         {"name": "Golden Sum", "kills": 21, "deaths": 20, "assists": 9, "psg": 38, "damage": 2442, "win": false},
         {"name": "pereK", "kills": 25, "deaths": 23, "assists": 6, "psg": 54, "damage": 2040, "win": false},
